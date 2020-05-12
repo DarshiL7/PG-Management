@@ -46,18 +46,7 @@ export class RentalEditComponent extends AbstractRental implements OnInit, OnDes
         this.rentalkey = Object.keys(this.rentalTypeEnum).filter(Number);
         this.paymentkey = Object.keys(this.paymentTypeEnum).filter(Number);
 
-        this.get({path:'api/rental', params: [this.id] ,queryParams:{RentalId:this.id}}).subscribe((t:vRentalRecord) => {
-          console.log(t);
-          this.rentalRecord = t;
-          this.get({path:'api/createBookbed', params: [this.id] ,queryParams:{UserId:t.userId}}).subscribe((t:any) => {
-            this.rentalBookBeds = new List<vBookBed>(t,vBookBed);
-            console.log(t);
-            this.rentalBookBeds=t;
-            this.isLoad=true;
-
-          })
-
-        })
+        this.get()
 
     }
 
