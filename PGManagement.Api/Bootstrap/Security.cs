@@ -109,7 +109,7 @@ namespace PGManagement.Api.Bootstrap
                     var traceId = await exception.LogAsync(context);
                     context.Response.ContentType = "application/json;";
                     await context.Response.WriteAsync("Error Has Occured.");
-                    // Log.Error(String.Format("Stacktrace of error: {0}", exception.StackTrace.ToString()));
+                    await context.Response.WriteAsync(String.Format("Stacktrace of error: {0}", exception.ToString()));
                 });
             });
         }
