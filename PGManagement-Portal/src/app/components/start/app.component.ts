@@ -35,8 +35,8 @@ export class AppComponent extends RxHttp implements OnInit {
       hostURIs: [{
         name: 'server',
         default: false,
-        uri: "https://localhost:44352"
-        // uri: "http://dotnettraining2020-api.live1.dev.radixweb.net/PGManagementSystem"
+        //uri: "https://localhost:44352"
+        uri: "http://test-api.live1.dev.radixweb.net"
       },
       {
         name: 'local',
